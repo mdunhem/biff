@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "projects": {
+    "house-docs": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/house-docs",
+      "sourceRoot": "apps/house-docs/src",
+      "prefix": "mdunhem",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/house-docs",
+            "index": "apps/house-docs/src/index.html",
+            "main": "apps/house-docs/src/main.ts",
+            "polyfills": "apps/house-docs/src/polyfills.ts",
+            "tsConfig": "apps/house-docs/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/house-docs/src/favicon.ico",
+              "apps/house-docs/src/assets"
+            ],
+            "styles": ["apps/house-docs/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/house-docs/src/environments/environment.ts",
+                  "with": "apps/house-docs/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "house-docs:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "house-docs:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "house-docs:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/house-docs/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/house-docs/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "house-docs-e2e": {
+      "root": "apps/house-docs-e2e",
+      "sourceRoot": "apps/house-docs-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/house-docs-e2e/cypress.json",
+            "tsConfig": "apps/house-docs-e2e/tsconfig.e2e.json",
+            "devServerTarget": "house-docs:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "house-docs:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/house-docs-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "house-docs"
+}
