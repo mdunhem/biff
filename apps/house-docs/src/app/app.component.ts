@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'mdunhem-root',
+  selector: 'biff-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

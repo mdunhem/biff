@@ -1,7 +1,7 @@
 {
-  "npmScope": "mdunhem",
+  "npmScope": "biff",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "implicitDependencies": {
     "angular.json": "*",
@@ -16,9 +16,17 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "accessToken": "Njg4Yzc3M2EtYmJiZC00NmZmLWI5ZjEtNjM4OTM2NWVmZTlhfHJlYWQtd3JpdGU=",
+        "cacheableOperations": [
+          "build",
+          "test",
+          "lint",
+          "e2e"
+        ],
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
       }
     }
   },
@@ -28,7 +36,9 @@
     },
     "house-docs-e2e": {
       "tags": [],
-      "implicitDependencies": ["house-docs"]
+      "implicitDependencies": [
+        "house-docs"
+      ]
     }
   }
 }

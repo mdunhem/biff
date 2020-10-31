@@ -10,7 +10,7 @@
       },
       "root": "apps/house-docs",
       "sourceRoot": "apps/house-docs/src",
-      "prefix": "mdunhem",
+      "prefix": "biff",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
