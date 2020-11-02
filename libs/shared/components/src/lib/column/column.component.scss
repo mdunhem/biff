@@ -1,0 +1,55 @@
+$spacing-scale: (
+  giant: 4rem,
+  huge: 2rem,
+  large: 1.5rem,
+  medium: 1rem,
+  small: 0.5rem,
+  tiny: 0.25rem,
+  zero: 0rem,
+);
+
+@mixin make-spacing-scale {
+  @each $scale, $value in $spacing-scale {
+    &--#{$scale} ::ng-deep > *:not(:last-child) {
+      margin-bottom: $value;
+    }
+  }
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  &.gap {
+    @include make-spacing-scale;
+  }
+}
+
+/*
+export enum Spacing {
+  Giant = 'giant',
+  Huge = 'huge',
+  Large = 'large',
+  Medium = 'medium',
+  Small = 'small',
+  Tiny = 'tiny',
+  Zero = 'zero',
+}
+
+const spacingScale = {
+  giant: '4rem',
+  huge: '2rem',
+  large: '1.5rem',
+  medium: '1rem',
+  small: '0.5rem',
+  tiny: '0.25rem',
+  zero: '0rem',
+}
+
+export const getSpacingSize = (spacing: Spacing) => {
+  return spacingScale[spacing];
+}
+*/

@@ -20,7 +20,9 @@
       "@biff/shared/layout": ["libs/shared/layout/src/index.ts"],
       "@biff/house-docs/features/home": [
         "libs/house-docs/features/home/src/index.ts"
-      ]
+      ],
+      "@biff/shared/components": ["libs/shared/components/src/index.ts"],
+      "@biff/styling-core": ["libs/styling/core/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

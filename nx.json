@@ -41,6 +41,12 @@
     },
     "house-docs-features-home": {
       "tags": []
+    },
+    "shared-components": {
+      "tags": []
+    },
+    "styling-core": {
+      "tags": []
     }
   }
 }

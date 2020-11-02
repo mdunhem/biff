@@ -4,5 +4,7 @@ module.exports = {
     '<rootDir>/libs/shared/canvas',
     '<rootDir>/libs/shared/layout',
     '<rootDir>/libs/house-docs/features/home',
+    '<rootDir>/libs/shared/components',
+    '<rootDir>/libs/styling/core',
   ],
 };

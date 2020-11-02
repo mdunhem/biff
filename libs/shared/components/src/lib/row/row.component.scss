@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  & ::ng-deep > *:not(:first-child) {
+    margin-left: 1rem;
+  }
+}
+
+/**
+ *
+const RowBase = createStyledTag<RowProps>(
+  Grid,
+  ({ gap = Spacing.Small }) => {
+    const value = getSpacingSize(gap);
+
+    return {
+      '& > *:not(:first-child)': {
+        marginLeft: value,
+      },
+      width: 'auto',
+    };
+  }
+);
+ */
