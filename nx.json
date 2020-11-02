@@ -19,12 +19,7 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "accessToken": "Njg4Yzc3M2EtYmJiZC00NmZmLWI5ZjEtNjM4OTM2NWVmZTlhfHJlYWQtd3JpdGU=",
-        "cacheableOperations": [
-          "build",
-          "test",
-          "lint",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "test", "lint", "e2e"],
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
@@ -36,9 +31,16 @@
     },
     "house-docs-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "house-docs"
-      ]
+      "implicitDependencies": ["house-docs"]
+    },
+    "shared-canvas": {
+      "tags": []
+    },
+    "shared-layout": {
+      "tags": []
+    },
+    "house-docs-features-home": {
+      "tags": []
     }
   }
 }

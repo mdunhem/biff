@@ -15,7 +15,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@biff/shared/canvas": ["libs/shared/canvas/src/index.ts"],
+      "@biff/shared/layout": ["libs/shared/layout/src/index.ts"],
+      "@biff/house-docs/features/home": [
+        "libs/house-docs/features/home/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
